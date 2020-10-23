@@ -1,0 +1,61 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#root-calculator {
+    height: 100%;
+}
+
+.display_calculator {
+    font-size: 5em;
+    text-align: right;
+    height: 30%;
+}
+
+.keys_calculator {
+    height: 70%;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+
+.last_grid {
+    display: grid;
+}
+
+.btn {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.btn:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.btn:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    outline: none;
+    appearance: none;
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
+}
