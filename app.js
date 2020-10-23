@@ -58,6 +58,7 @@ lastcell.classList.add('last_grid');
 
 for (let i = 0; i < Object.keys(nameIdKeys).length; i++) {
     const elem = document.createElement('button');
+    elem.classList.add('btn');
     
     if (nameIdKeys[i] >= 0 && nameIdKeys[i] <= 9) {
         elem.classList.add('key' + nameIdKeys[i]);

@@ -5,7 +5,7 @@
 html,
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 300;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -17,7 +17,6 @@ body {
 }
 
 .display_calculator {
-    /* background-color: white; */
     font-size: 5em;
     text-align: right;
     height: 30%;
@@ -27,11 +26,25 @@ body {
     height: 70%;
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-    background-color: rgba(241, 242, 246,1.0);
 }
 
 .last_grid {
     display: grid;
+}
+
+.btn {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.btn:hover {
+    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%, #47a7f5 1%) center/16000%;
+}
+
+.btn:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
 }
 
 button {
@@ -40,15 +53,9 @@ button {
     padding: 0;
     outline: none;
     appearance: none;
-    background: none;
     font-size: 25px;
     font-family: inherit;
     font-weight: inherit;
-    transition: 0.2s ease-in 0.2s;
-}
-
-button:hover:focus {
-    background-color: rgba(237, 238, 243,1.0);
-    border-radius: 50%;
-    transform: perspective(10px);
+    cursor: pointer;
+    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
 }
