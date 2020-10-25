@@ -51,6 +51,11 @@ const main = document.querySelector('#root-calculator');
 
 document.querySelector('.display_calculator').innerText = '0';
 const keys = document.querySelector('.keys_calculator');
+
+const upcell = document.createElement('div');
+upcell.classList.add('up_grid');
+keys.appendChild(upcell);
+
 const lastcell = document.createElement('div');
 lastcell.classList.add('last_grid');
 
@@ -62,15 +67,14 @@ for (let i = 0; i < Object.keys(nameIdKeys).length; i += 1) {
     elem.classList.add(`key${nameIdKeys[i]}`);
     elem.setAttribute('value', nameIdKeys[i]);
     elem.innerText = nameIdKeys[i];
-    keys.appendChild(elem);
-  } else if (nameIdKeys[i].action === 'sustract' || nameIdKeys[i].action === 'add') {
-    if (nameIdKeys[i].action === 'sustract') {
-      // elem.classList.add('fas');
-      // elem.classList.add('fa-minus');
-    } else {
-      // elem.classList.add('fas');
-      // elem.classList.add('fa-plus');
-    }
+    upcell.appendChild(elem);
+  } else if (
+    nameIdKeys[i].action === 'erase' ||
+    nameIdKeys[i].action === 'divide' ||
+    nameIdKeys[i].action === 'multiply' ||
+    nameIdKeys[i].action === 'sustract' ||
+    nameIdKeys[i].action === 'add'
+  ) {
     keys.appendChild(lastcell);
     elem.classList.add('key_operator');
     elem.setAttribute('data-action', nameIdKeys[i].action);
@@ -80,7 +84,7 @@ for (let i = 0; i < Object.keys(nameIdKeys).length; i += 1) {
     elem.classList.add('key_operator');
     elem.setAttribute('data-action', nameIdKeys[i].action);
     elem.innerText = nameIdKeys[i].value;
-    keys.appendChild(elem);
+    upcell.appendChild(elem);
   }
 }
 
