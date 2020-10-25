@@ -24,13 +24,20 @@ body {
 
 .keys_calculator {
     height: 70%;
-    display: grid;
-    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    display: flex;
     background-color: rgba(241, 242, 246,1.0);
 }
 
-.last_grid {
+.up_grid {
+    width: 80%;
     display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+}
+
+.last_grid {
+    width: 20%;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(1, 1fr);
 }
 
 .btn {
@@ -60,3 +67,16 @@ button {
     // cursor: pointer;
     background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
 }
+
+@media (min-width: 48em) {
+    #root-calculator {
+      max-width: 43rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10em 10em;
+    }
+
+    .display_calculator {
+        background-color: papayawhip;
+    }
+}  
