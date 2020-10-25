@@ -26,6 +26,7 @@ body {
     height: 70%;
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    background-color: rgba(241, 242, 246,1.0);
 }
 
 .last_grid {
@@ -38,7 +39,7 @@ body {
 }
 
 .btn:hover {
-    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%, rgb(212, 214, 221) 1%) center/15000%;
 }
 
 .btn:active {
@@ -49,13 +50,13 @@ body {
 
 button {
     border: 0;
-    border-radius: 0;
+    border-radius: 50%;
     padding: 0;
     outline: none;
     appearance: none;
     font-size: 25px;
     font-family: inherit;
     font-weight: inherit;
-    cursor: pointer;
+    // cursor: pointer;
     background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
 }
