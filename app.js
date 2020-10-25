@@ -1,7 +1,9 @@
 import Layout from './public/javaScript/create_layout';
 import './public/stylesheets/styles.scss';
 
-const ui = new Layout();
+const nameIdKeys = require('./public/json/nameIdKeys.json');
+
+const ui = new Layout(nameIdKeys);
 
 ui.calculatorLayout();
 
