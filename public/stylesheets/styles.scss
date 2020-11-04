@@ -4,7 +4,7 @@
 
 html,
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: arial,sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
@@ -17,9 +17,33 @@ body {
 }
 
 .display_calculator {
-    font-size: 5em;
-    text-align: right;
     height: 30%;
+    width: 100%;
+    overflow: hidden;    
+}
+
+.result {
+    text-align: right;
+    font-size: 20px;
+    white-space: nowrap;
+    // animation: 
+    // typing 3.5s steps(30, end),
+    // blink-caret .5s step-end infinite;
+}
+
+.number {
+    float: right;
+    font-size: 35px;
+    margin: 15px 3px 0 0;
+    white-space: nowrap;
+    border-right: .07em solid #90e0ef;
+    animation: 
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #90e0ef }
 }
 
 .keys_calculator {
@@ -28,14 +52,14 @@ body {
     background-color: rgba(241, 242, 246,1.0);
 }
 
-.up_grid {
+.numbersCells {
     width: 80%;
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
 }
 
-.last_grid {
-    width: 20%;
+.operatorsCells {
+    width: 25%;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(1, 1fr);
 }
@@ -51,7 +75,7 @@ body {
 
 .btn:active {
     background-color: #6eb9f7;
-    background-size: 100%;
+    background-size: 10%;
     transition: background 0s;
 }
 
@@ -70,7 +94,7 @@ button {
 
 @media (min-width: 48em) {
     #root-calculator {
-      max-width: 43rem;
+      max-width: 50rem;
       margin-left: auto;
       margin-right: auto;
       padding: 10em 10em;

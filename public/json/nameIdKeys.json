@@ -1,0 +1,52 @@
+{
+  "0": {
+    "action": "opening_parenthesis",
+    "value": "("
+  },
+  "1": {
+    "action": "closing_parenthesis",
+    "value": ")"
+  },
+  "2": {
+    "action": "percentage",
+    "value": "%"
+  },
+    "3": 7,
+    "4": 8,
+    "5": 9,
+    "6": {
+      "action": "erase",
+      "value": "AC"
+    },
+    "7": 4,
+    "8": 5,
+    "9": 6,
+    "10": {
+      "action": "divide",
+      "value": "/"
+    },
+    "11": 1,
+    "12": 2,
+    "13": 3,
+    "14": {
+      "action": "multiply",
+      "value": "*"
+    },
+    "15": 0,
+    "16": {
+      "action": "decimal",
+      "value": "."
+    },
+    "17": {
+      "action": "equal",
+      "value": "="
+    },
+    "18": {
+      "action": "subtract",
+      "value": "-"
+    },
+    "19": {
+      "action": "add",
+      "value": "+"
+    }
+  }

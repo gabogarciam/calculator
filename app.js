@@ -1,40 +1,45 @@
 import Layout from './public/javaScript/create_layout';
 import './public/stylesheets/styles.scss';
 
-const ui = new Layout();
+require('./favicon.ico');
 
+const nameIdKeys = require('./public/json/nameIdKeys.json');
+
+const ui = new Layout(nameIdKeys);
 ui.calculatorLayout();
 
 const keysEvent = document.querySelector('.keys_calculator');
-const display = document.querySelector('.display_calculator');
+const displayNumber = document.querySelector('.display_calculator .number');
+// const displayResult = document.querySelector('.display_calculator .result');
 
 keysEvent.addEventListener('click', (e) => {
   if (e.target.matches('button')) {
     const key = e.target;
     const { action } = key.dataset;
     const keyContent = key.textContent;
-    const displayedNum = display.textContent;
+    const displayedNum = displayNumber.textContent;
 
     if (!action) {
       if (displayedNum === '0') {
-        display.textContent = keyContent;
+        displayNumber.textContent = keyContent;
       } else {
-        display.textContent = displayedNum + keyContent;
+        displayNumber.textContent = displayedNum + keyContent;
       }
       console.log(`${key.value} number key!`);
     } else if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
       console.log(`${action} operator key!`);
     } else if (action === 'decimal') {
-      display.textContent = `${displayedNum}.`;
-      console.log(`${action} key!`);
-    } else if (action === 'clear') {
+      if (displayNumber.textContent.includes('.')) {
+        displayNumber.textContent = `${displayedNum}`;
+      } else {
+        displayNumber.textContent = `${displayedNum}.`;
+      }
       console.log(`${action} key!`);
     } else if (action === 'equal') {
       console.log(`${action} key!`);
     } else if (action === 'erase') {
       console.log(`${action} key!`);
+      displayNumber.textContent = '0';
     }
-    // const val = e.path[0].getAttribute('value') ? e.path[0].value : e.path[0].getAttribute('data-action');
-    // console.log(val);
   }
 });

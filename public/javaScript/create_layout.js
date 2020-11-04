@@ -1,7 +1,5 @@
-const nameIdKeys = require('./nameIdKeys.json');
-
 class Layout {
-  constructor() {
+  constructor(nameIdKeys) {
     this.main = document.querySelector('#root-calculator');
     this.nameIdKeys = nameIdKeys;
   }
@@ -13,42 +11,56 @@ class Layout {
       this.main.appendChild(div);
     });
 
-    document.querySelector('.display_calculator').innerText = '0';
+    this.display = document.querySelector('.display_calculator');
+    ['result', 'number'].forEach((elem) => {
+      const div = document.createElement('div');
+      div.classList.add(elem);
+      this.display.appendChild(div);
+    });
+
+    document.querySelector('.display_calculator .number').innerText = '0';
+    document.querySelector('.display_calculator .result').innerText = `Ans = 0`;
+
     this.keys = document.querySelector('.keys_calculator');
+    ['numbersCells', 'operatorsCells'].forEach((elem) => {
+      const div = document.createElement('div');
+      div.classList.add(elem);
+      this.keys.appendChild(div);
+    });
 
-    const upcell = document.createElement('div');
-    upcell.classList.add('up_grid');
-    this.keys.appendChild(upcell);
+    this.numbersCells = document.querySelector('.numbersCells');
+    this.operatorsCells = document.querySelector('.operatorsCells');
 
-    const lastcell = document.createElement('div');
-    lastcell.classList.add('last_grid');
-
-    for (let i = 0; i < Object.keys(nameIdKeys).length; i += 1) {
+    for (let i = 0; i < Object.keys(this.nameIdKeys).length; i += 1) {
       const elem = document.createElement('button');
       elem.classList.add('btn');
 
-      if (nameIdKeys[i] >= 0 && nameIdKeys[i] <= 9) {
-        elem.classList.add(`key${nameIdKeys[i]}`);
-        elem.setAttribute('value', nameIdKeys[i]);
-        elem.innerText = nameIdKeys[i];
-        upcell.appendChild(elem);
-      } else if (
-        nameIdKeys[i].action === 'erase' ||
-        nameIdKeys[i].action === 'divide' ||
-        nameIdKeys[i].action === 'multiply' ||
-        nameIdKeys[i].action === 'subtract' ||
-        nameIdKeys[i].action === 'add'
-      ) {
-        this.keys.appendChild(lastcell);
+      if (this.nameIdKeys[i].value === '(' || this.nameIdKeys[i].value === ')' || this.nameIdKeys[i].value === '%') {
         elem.classList.add('key_operator');
-        elem.setAttribute('data-action', nameIdKeys[i].action);
-        elem.innerText = nameIdKeys[i].value;
-        lastcell.appendChild(elem);
+        elem.setAttribute('data-action', this.nameIdKeys[i].action);
+        elem.innerText = this.nameIdKeys[i].value;
+        this.numbersCells.appendChild(elem);
+      } else if (this.nameIdKeys[i] >= 0 && this.nameIdKeys[i] <= 9) {
+        elem.classList.add(`key${this.nameIdKeys[i]}`);
+        elem.setAttribute('value', this.nameIdKeys[i]);
+        elem.innerText = this.nameIdKeys[i];
+        this.numbersCells.appendChild(elem);
+      } else if (
+        this.nameIdKeys[i].action === 'divide' ||
+        this.nameIdKeys[i].action === 'erase' ||
+        this.nameIdKeys[i].action === 'multiply' ||
+        this.nameIdKeys[i].action === 'subtract' ||
+        this.nameIdKeys[i].action === 'add'
+      ) {
+        elem.classList.add('key_operator');
+        elem.setAttribute('data-action', this.nameIdKeys[i].action);
+        elem.innerText = this.nameIdKeys[i].value;
+        this.operatorsCells.appendChild(elem);
       } else {
         elem.classList.add('key_operator');
-        elem.setAttribute('data-action', nameIdKeys[i].action);
-        elem.innerText = nameIdKeys[i].value;
-        upcell.appendChild(elem);
+        elem.setAttribute('data-action', this.nameIdKeys[i].action);
+        elem.innerText = this.nameIdKeys[i].value;
+        this.numbersCells.appendChild(elem);
       }
     }
   }
