@@ -22,20 +22,39 @@ body {
     height: 30%;
 }
 
+.display_calculator h1 {
+    overflow: hidden;
+    border-right: .15em solid lightblue;
+    animation:
+    blink-care .5s step-end infinite;
+}
+
+.-long {
+    font-size: 3em;
+}
+
+.-medium {
+    font-size: 2em;
+}
+
+.-small {
+    font-size: 1.8em;
+}
+
 .keys_calculator {
     height: 70%;
     display: flex;
     background-color: rgba(241, 242, 246,1.0);
 }
 
-.up_grid {
+.numbersCells {
     width: 80%;
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(3, 1fr);
 }
 
-.last_grid {
-    width: 20%;
+.operatorsCells {
+    width: 25%;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(1, 1fr);
 }
