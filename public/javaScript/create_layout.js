@@ -12,12 +12,14 @@ class Layout {
     });
 
     this.display = document.querySelector('.display_calculator');
-    ['number', 'result'].forEach((elem) => {
+    ['result', 'number'].forEach((elem) => {
       const div = document.createElement('div');
       div.classList.add(elem);
       this.display.appendChild(div);
     });
+
     document.querySelector('.display_calculator .number').innerText = '0';
+    document.querySelector('.display_calculator .result').innerText = `Ans = 0`;
 
     this.keys = document.querySelector('.keys_calculator');
     ['numbersCells', 'operatorsCells'].forEach((elem) => {
@@ -33,7 +35,12 @@ class Layout {
       const elem = document.createElement('button');
       elem.classList.add('btn');
 
-      if (this.nameIdKeys[i] >= 0 && this.nameIdKeys[i] <= 9) {
+      if (this.nameIdKeys[i].value === '(' || this.nameIdKeys[i].value === ')' || this.nameIdKeys[i].value === '%') {
+        elem.classList.add('key_operator');
+        elem.setAttribute('data-action', this.nameIdKeys[i].action);
+        elem.innerText = this.nameIdKeys[i].value;
+        this.numbersCells.appendChild(elem);
+      } else if (this.nameIdKeys[i] >= 0 && this.nameIdKeys[i] <= 9) {
         elem.classList.add(`key${this.nameIdKeys[i]}`);
         elem.setAttribute('value', this.nameIdKeys[i]);
         elem.innerText = this.nameIdKeys[i];

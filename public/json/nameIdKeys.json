@@ -1,39 +1,51 @@
 {
-    "0": 7,
-    "1": 8,
-    "2": 9,
-    "3": {
+  "0": {
+    "action": "opening_parenthesis",
+    "value": "("
+  },
+  "1": {
+    "action": "closing_parenthesis",
+    "value": ")"
+  },
+  "2": {
+    "action": "percentage",
+    "value": "%"
+  },
+    "3": 7,
+    "4": 8,
+    "5": 9,
+    "6": {
       "action": "erase",
       "value": "AC"
     },
-    "4": 4,
-    "5": 5,
-    "6": 6,
-    "7": {
+    "7": 4,
+    "8": 5,
+    "9": 6,
+    "10": {
       "action": "divide",
       "value": "/"
     },
-    "8": 1,
-    "9": 2,
-    "10": 3,
-    "11": {
+    "11": 1,
+    "12": 2,
+    "13": 3,
+    "14": {
       "action": "multiply",
       "value": "*"
     },
-    "12": 0,
-    "13": {
+    "15": 0,
+    "16": {
       "action": "decimal",
       "value": "."
     },
-    "14": {
+    "17": {
       "action": "equal",
       "value": "="
     },
-    "15": {
+    "18": {
       "action": "subtract",
       "value": "-"
     },
-    "16": {
+    "19": {
       "action": "add",
       "value": "+"
     }
