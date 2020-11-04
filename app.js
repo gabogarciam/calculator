@@ -1,7 +1,6 @@
 import Layout from './public/javaScript/create_layout';
 import './public/stylesheets/styles.scss';
-
-require('./favicon.ico');
+import './favicon.ico';
 
 const nameIdKeys = require('./public/json/nameIdKeys.json');
 
