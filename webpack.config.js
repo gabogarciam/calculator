@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        use: ['file-loader']
+        use: ['file-loader?name=[name].[ext]']
       }
     ]
   },
