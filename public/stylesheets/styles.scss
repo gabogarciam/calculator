@@ -19,13 +19,16 @@ body {
 .display_calculator {
     height: 30%;
     width: 100%;
-    overflow: hidden;    
+    overflow: hidden;
+    background: #ffb700;;
 }
 
 .result {
+    // float: right;
     text-align: right;
     font-size: 20px;
     white-space: nowrap;
+    margin: 20px 10px 0 10px;
     // animation: 
     // typing 3.5s steps(30, end),
     // blink-caret .5s step-end infinite;
@@ -34,7 +37,7 @@ body {
 .number {
     float: right;
     font-size: 35px;
-    margin: 15px 3px 0 0;
+    margin: 50px 10px 0 10px;
     white-space: nowrap;
     border-right: .07em solid #90e0ef;
     animation: 
@@ -49,7 +52,7 @@ body {
 .keys_calculator {
     height: 70%;
     display: flex;
-    background-color: rgba(241, 242, 246,1.0);
+    background-color: #00b2ca;
 }
 
 .numbersCells {
@@ -70,11 +73,11 @@ body {
 }
 
 .btn:hover {
-    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%, rgb(212, 214, 221) 1%) center/15000%;
+    background: #00b2ca radial-gradient(circle, transparent 1%, #90e0ef 1%) center/15000%;
 }
 
 .btn:active {
-    background-color: #6eb9f7;
+    background-color: #00b2ca;
     background-size: 10%;
     transition: background 0s;
 }
@@ -89,18 +92,15 @@ button {
     font-family: inherit;
     font-weight: inherit;
     // cursor: pointer;
-    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
+    background: #00b2ca;
+    // background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
 }
 
 @media (min-width: 48em) {
     #root-calculator {
-      max-width: 50rem;
+      max-width: 45rem;
       margin-left: auto;
       margin-right: auto;
       padding: 10em 10em;
-    }
-
-    .display_calculator {
-        background-color: papayawhip;
     }
 }  

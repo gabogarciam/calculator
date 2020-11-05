@@ -19,7 +19,7 @@ class Layout {
     });
 
     document.querySelector('.display_calculator .number').innerText = '0';
-    document.querySelector('.display_calculator .result').innerText = `Ans = 0`;
+    document.querySelector('.display_calculator .result').innerText = 'Ans = 0';
 
     this.keys = document.querySelector('.keys_calculator');
     ['numbersCells', 'operatorsCells'].forEach((elem) => {

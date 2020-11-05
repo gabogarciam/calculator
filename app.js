@@ -24,16 +24,34 @@ keysEvent.addEventListener('click', (e) => {
       } else {
         displayNumber.textContent = displayedNum + keyContent;
       }
-      console.log(`${key.value} number key!`);
+      //   console.log(`${key.value} number key!`);
     } else if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
-      console.log(`${action} operator key!`);
+      if (displayedNum !== '0') {
+        if (
+          displayNumber.textContent[displayNumber.textContent.length - 1] !== '+' &&
+          displayNumber.textContent[displayNumber.textContent.length - 1] !== '-' &&
+          displayNumber.textContent[displayNumber.textContent.length - 1] !== '*' &&
+          displayNumber.textContent[displayNumber.textContent.length - 1] !== '÷'
+        ) {
+          if (action === 'add') {
+            displayNumber.textContent = `${displayedNum}+`;
+          } else if (action === 'subtract') {
+            displayNumber.textContent = `${displayedNum}-`;
+          } else if (action === 'multiply') {
+            displayNumber.textContent = `${displayedNum}x`;
+          } else if (action === 'divide') {
+            displayNumber.textContent = `${displayedNum}÷`;
+          }
+        }
+      }
+      //   console.log(`${action} operator key!`);
     } else if (action === 'decimal') {
       if (displayNumber.textContent.includes('.')) {
         displayNumber.textContent = `${displayedNum}`;
       } else {
         displayNumber.textContent = `${displayedNum}.`;
       }
-      console.log(`${action} key!`);
+      //   console.log(`${action} key!`);
     } else if (action === 'equal') {
       console.log(`${action} key!`);
     } else if (action === 'erase') {
