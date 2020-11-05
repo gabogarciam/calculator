@@ -30,7 +30,7 @@ keysEvent.addEventListener('click', (e) => {
         if (
           displayNumber.textContent[displayNumber.textContent.length - 1] !== '+' &&
           displayNumber.textContent[displayNumber.textContent.length - 1] !== '-' &&
-          displayNumber.textContent[displayNumber.textContent.length - 1] !== '*' &&
+          displayNumber.textContent[displayNumber.textContent.length - 1] !== 'x' &&
           displayNumber.textContent[displayNumber.textContent.length - 1] !== '÷'
         ) {
           if (action === 'add') {
