@@ -26,14 +26,10 @@ body {
 }
 
 .result {
-    // float: right;
     text-align: right;
     font-size: 20px;
     white-space: nowrap;
     margin: 20px 10px 0 10px;
-    // animation: 
-    // typing 3.5s steps(30, end),
-    // blink-caret .5s step-end infinite;
 }
 
 .number {
@@ -92,7 +88,17 @@ button {
     background: rgb(246,255,248) radial-gradient(circle, transparent 1%, rgb(227, 247, 231) 1%) center/15000%;
 }
 
-@media (min-width: 48em) {
+@media only screen and (orientation: landscape) {
+    .result {
+        margin-top: 10px;
+    }
+    
+    .number {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 51em) {
     #root-calculator {
       max-width: 45rem;
       margin-left: auto;
