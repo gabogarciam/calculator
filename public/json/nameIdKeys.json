@@ -11,42 +11,43 @@
     "action": "percentage",
     "value": "%"
   },
-    "3": 7,
-    "4": 8,
-    "5": 9,
-    "6": {
-      "action": "erase",
-      "value": "AC"
-    },
-    "7": 4,
-    "8": 5,
-    "9": 6,
-    "10": {
-      "action": "divide",
-      "value": "/"
-    },
-    "11": 1,
-    "12": 2,
-    "13": 3,
-    "14": {
-      "action": "multiply",
-      "value": "*"
-    },
-    "15": 0,
-    "16": {
-      "action": "decimal",
-      "value": "."
-    },
-    "17": {
-      "action": "equal",
-      "value": "="
-    },
-    "18": {
-      "action": "subtract",
-      "value": "-"
-    },
-    "19": {
-      "action": "add",
-      "value": "+"
-    }
+  "3": {
+    "action": "erase",
+    "value": "AC"
+  },
+  "4": 7,
+  "5": 8,
+  "6": 9,
+  "7": {
+    "action": "divide",
+    "value": "÷"
+  },
+  "8": 4,
+  "9": 5,
+  "10": 6,
+  "11": {
+    "action": "multiply",
+    "value": "x"
+  },
+  "12": 1,
+  "13": 2,
+  "14": 3,
+  "15": {
+    "action": "subtract",
+    "value": "-"
+  },
+  "16": 0,
+  "17": {
+    "action": "decimal",
+    "value": "."
+  },
+  "18": {
+    "action": "equal",
+    "value": "="
+  },
+  
+  "19": {
+    "action": "add",
+    "value": "+"
   }
+}

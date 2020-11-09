@@ -34,14 +34,15 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        use: ['file-loader']
+        use: ['file-loader?name=[name].[ext]']
       }
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      favicon: './favicon.ico'
     })
   ]
 };

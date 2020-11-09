@@ -19,24 +19,25 @@ body {
 .display_calculator {
     height: 30%;
     width: 100%;
-    overflow: hidden;    
+    overflow: hidden;
+    background: #fff;
+    border: solid #BDBDBD .1px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .result {
     text-align: right;
     font-size: 20px;
     white-space: nowrap;
-    // animation: 
-    // typing 3.5s steps(30, end),
-    // blink-caret .5s step-end infinite;
+    margin: 20px 10px 0 10px;
 }
 
 .number {
     float: right;
     font-size: 35px;
-    margin: 15px 3px 0 0;
+    margin: 50px 10px 0 10px;
     white-space: nowrap;
-    border-right: .07em solid #90e0ef;
+    border-right: .07em solid #d5f6fc;
     animation: 
     blink-caret .5s step-end infinite;
 }
@@ -49,19 +50,15 @@ body {
 .keys_calculator {
     height: 70%;
     display: flex;
-    background-color: rgba(241, 242, 246,1.0);
+    background: rgb(246,255,248) linear-gradient(180deg, rgba(246,255,248,1) 34%, rgba(246,251,247,1) 52%);
+    border: solid #BDBDBD 1px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .numbersCells {
-    width: 80%;
+    width: 100%;
     display: grid;
-    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
-}
-
-.operatorsCells {
-    width: 25%;
-    display: grid;
-    grid-template: repeat(5, 1fr) / repeat(1, 1fr);
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 }
 
 .btn {
@@ -70,11 +67,11 @@ body {
 }
 
 .btn:hover {
-    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%, rgb(212, 214, 221) 1%) center/15000%;
+    background: rgb(225, 248, 230) radial-gradient(circle, transparent 1%, rgb(227, 247, 231) 1%) center/15000%;
 }
 
 .btn:active {
-    background-color: #6eb9f7;
+    background-color: rgb(246,255,248);
     background-size: 10%;
     transition: background 0s;
 }
@@ -88,19 +85,28 @@ button {
     font-size: 25px;
     font-family: inherit;
     font-weight: inherit;
-    // cursor: pointer;
-    background: rgba(241, 242, 246,1.0) radial-gradient(circle, transparent 1%,rgba(241, 242, 246,1.0) 1%) center/15000%;
+    background: rgb(246,255,248) radial-gradient(circle, transparent 1%, rgb(227, 247, 231) 1%) center/15000%;
 }
 
-@media (min-width: 48em) {
+@media only screen and (orientation: landscape) {
+    .result {
+        margin-top: 10px;
+    }
+    
+    .number {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 51em) {
     #root-calculator {
-      max-width: 50rem;
+      max-width: 45rem;
       margin-left: auto;
       margin-right: auto;
       padding: 10em 10em;
     }
 
-    .display_calculator {
-        background-color: papayawhip;
+    button {
+        cursor: pointer;
     }
 }  

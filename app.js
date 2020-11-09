@@ -1,7 +1,6 @@
 import Layout from './public/javaScript/create_layout';
 import './public/stylesheets/styles.scss';
-
-require('./favicon.ico');
+import './favicon.ico';
 
 const nameIdKeys = require('./public/json/nameIdKeys.json');
 
@@ -10,7 +9,7 @@ ui.calculatorLayout();
 
 const keysEvent = document.querySelector('.keys_calculator');
 const displayNumber = document.querySelector('.display_calculator .number');
-// const displayResult = document.querySelector('.display_calculator .result');
+const displayResult = document.querySelector('.display_calculator .result');
 
 keysEvent.addEventListener('click', (e) => {
   if (e.target.matches('button')) {
@@ -18,6 +17,7 @@ keysEvent.addEventListener('click', (e) => {
     const { action } = key.dataset;
     const keyContent = key.textContent;
     const displayedNum = displayNumber.textContent;
+    const arrayNumber = displayedNum.split(' ');
 
     if (!action) {
       if (displayedNum === '0') {
@@ -25,20 +25,50 @@ keysEvent.addEventListener('click', (e) => {
       } else {
         displayNumber.textContent = displayedNum + keyContent;
       }
-      console.log(`${key.value} number key!`);
-    } else if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
-      console.log(`${action} operator key!`);
-    } else if (action === 'decimal') {
-      if (displayNumber.textContent.includes('.')) {
-        displayNumber.textContent = `${displayedNum}`;
-      } else {
-        displayNumber.textContent = `${displayedNum}.`;
+    } else if (
+      action === 'add' ||
+      action === 'subtract' ||
+      action === 'multiply' ||
+      action === 'divide' ||
+      action === 'decimal'
+    ) {
+      if (arrayNumber[arrayNumber.length - 1] === '') arrayNumber.pop();
+      if (
+        arrayNumber[arrayNumber.length - 1] !== '+' &&
+        arrayNumber[arrayNumber.length - 1] !== '-' &&
+        arrayNumber[arrayNumber.length - 1] !== 'x' &&
+        arrayNumber[arrayNumber.length - 1] !== '÷'
+      ) {
+        if (action === 'add') {
+          displayNumber.textContent = `${displayedNum} + `;
+        } else if (action === 'subtract') {
+          displayNumber.textContent = `${displayedNum} - `;
+        } else if (action === 'multiply') {
+          displayNumber.textContent = `${displayedNum} x `;
+        } else if (action === 'divide') {
+          displayNumber.textContent = `${displayedNum} ÷ `;
+        } else if (action === 'decimal') {
+          if (arrayNumber[arrayNumber.length - 1].includes('.')) {
+            displayNumber.textContent = `${displayedNum}`;
+          } else {
+            displayNumber.textContent = `${displayedNum}.`;
+          }
+        }
       }
+    } else if (action === 'opening_parenthesis') {
       console.log(`${action} key!`);
+    } else if (action === 'closing_parenthesis') {
+      console.log(`${action} key!`);
+    } else if (action === 'percentage') {
+      displayNumber.textContent = `${displayedNum}%`;
     } else if (action === 'equal') {
-      console.log(`${action} key!`);
+      let exp = displayedNum;
+      exp = exp.replaceAll('÷', '/');
+      exp = exp.replaceAll('x', '*');
+      exp = exp.replace(/[^0-9%^x/()\-+.*]/g, '');
+      const sum = eval(exp);
+      displayResult.textContent = `Ans = ${sum}`;
     } else if (action === 'erase') {
-      console.log(`${action} key!`);
       displayNumber.textContent = '0';
     }
   }
