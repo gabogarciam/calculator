@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/gabogarciam/calculator#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
+    "@babel/cli": "^8.0.0",
     "@babel/core": "^8.0.0",
     "@babel/preset-env": "^8.0.0",
     "babel-loader": "^10.0.0",
